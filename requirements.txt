@@ -1,0 +1,10 @@
+FlowKit==1.0.1
+matplotlib==3.7.2
+numpy==1.24.3
+pandas<2
+plotly==5.9.0
+regex==2022.7.9
+setuptools==68.0.0
+SQLAlchemy==1.4.39
+xmltodict==0.13.0
+psycopg
