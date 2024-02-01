@@ -7,4 +7,4 @@ regex==2022.7.9
 setuptools==68.0.0
 SQLAlchemy==1.4.39
 xmltodict==0.13.0
-psycopg
+psycopg2

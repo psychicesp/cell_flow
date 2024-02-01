@@ -6,13 +6,14 @@ import os
 # ----------------------------------------
 # Supporting Functions
 # ----------------------------------------
+
 # I'm sure there is a better way to get an absolute path to the module  
 #   which works wherever this module is run from,
 #   but I'm tired and I need to get this to work quickly
-module_path = __file__.split('ABIn')[0] + 'ABIn'
-queries_path = os.path.join(module_path, 'flow', 'sql', 'queries')
+module_path = __file__.split('cell_flow')[0] + 'cell_flow'
+queries_path = os.path.join(module_path, 'src', 'sql', 'queries')
 
-def open_query(file_name: str)->str:
+def _open_query(file_name: str)->str:
     # Reads a query text given file name
 
     file_name = os.path.basename(file_name)
@@ -51,7 +52,7 @@ def get_sql_query(
         A SQL query as a string
     """
 
-    query = open_query(file_name)
+    query = _open_query(file_name)
 
     # Error handling for missing kwargs
     placeholders = set(re.findall(r"{\w+}", query))
