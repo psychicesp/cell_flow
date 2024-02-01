@@ -132,6 +132,7 @@ def _upload_gates(
                 }
         )
     gate_df = pd.DataFrame(gate_list)
+    gate_df.to_csv("test.csv")
     to_database(
         gate_df,
         'gates'
@@ -233,6 +234,12 @@ def get_gating_info(
         # Grab scalers while we can:
         if _is_rectangle(gate):
             linear_boundaries = linear_boundaries + _rectangle_unpacker(gate)
+
+        # For some reason there are some gating strategies which have multiple gates of the same name
+        if name in gating_strategy_dict:
+            name = name + " again"
+            gate_info['clean_name'] = gate_info['clean_name'] + " again"
+            
 
         gating_strategy_dict[name] = gate_info
     

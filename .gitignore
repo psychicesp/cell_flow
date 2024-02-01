@@ -145,4 +145,4 @@ dmypy.json
 cython_debug/
 
 # Config to keep credentials private
-config.json
+*credentials.py
